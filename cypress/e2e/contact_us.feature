@@ -1,8 +1,11 @@
 Feature: Validate contact us page of webdriveruniversity
 
-    Scenario: Validate a success submission of contact us form
+    Background: pre-conditions
         Given I visit to webdriveruniversity homepage
         When I click on contact us button
+
+
+    Scenario: Validate a success submission of contact us form
         And I type First name
         And I type Last name
         And I type Email address
@@ -11,8 +14,6 @@ Feature: Validate contact us page of webdriveruniversity
         Then I should presented by a successfull submission of contact us message
 
     Scenario: Invalid submission of contact us form
-        Given I visit to webdriveruniversity homepage
-        When I click on contact us button
         And I type First name
         And I type Last name
         And I type a comment message
@@ -20,8 +21,6 @@ Feature: Validate contact us page of webdriveruniversity
         Then I should presented by a unsuccessfull submission of contact us message
 
     Scenario: Validate a success submission of contact us form - using regular expression
-        Given I visit to webdriveruniversity homepage
-        When I click on contact us button
         And I type specific First name "John"
         And I type specific Last name "Wick"
         And I type specific Email address "john.wick@example.com"
@@ -30,8 +29,6 @@ Feature: Validate contact us page of webdriveruniversity
         Then I should presented by a successfull submission of contact us message
 
     Scenario Outline: Validate Contact us submission
-        Given I visit to webdriveruniversity homepage
-        When I click on contact us button
         And I type first name <firstName> and last name '<lastName>'
         And I type '<emailAddress>' and '<comment>'
         And I click on Submit button
@@ -40,4 +37,4 @@ Feature: Validate contact us page of webdriveruniversity
         Examples:
             | firstName | lastName | emailAddress            | comment                            | message                      |
             | John      | Walter   | john.walter@ezample.com | Hello how are you?                 | Thank You for your Message!  |
-            | Ethan     | Hunt     | ethan.hunt@ezample.com  | Hello have you worked on cucumber? | Error: Invalid email address |
+            | Ethan     | Hunt     | ethan.hunt              | Hello have you worked on cucumber? | Error: Invalid email address |
