@@ -4,7 +4,12 @@
   "description": "Cypress automation e2e web testing framework with cucumber BDD",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "full-regression-chrome-headed":"cypress run --headed --browser chrome --spec 'cypress/e2e/*.feature'",
+    "full-regression-chrome-headless":"cypress run --browser chrome --spec 'cypress/e2e/*.feature'",
+    "contact-us-chrome-headed":"cypress run -e TAGS=\"@contact-us\" --headed --browser chrome",
+    "contact-us-chrome-headless":"cypress run -e TAGS=\"@contact-us\" --browser chrome",
+    "login-chrome-headless":"cypress run -e TAGS=\"@login\" --browser chrome"
   },
   "keywords": [
     "cypress",
@@ -21,6 +26,14 @@
     "ts-loader": "^9.4.4"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html":{
+      "enabled":true,
+      "output":"cypress/reports/cucumber/cucumber-reports.html"
+    },
+    "messages":{
+      "enabled":true,
+      "output":"cypress/reports/cucumber-ndjson/cucumber-reports.ndjson"
+    }	       
   }
 }

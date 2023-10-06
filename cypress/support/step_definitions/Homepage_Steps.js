@@ -10,5 +10,7 @@ When(`I click on contact us button`, () => {
     cy.get('#contact-us').invoke('removeAttr', 'target').click();
 })
 
-
+When('I click on login button', () => {
+    cy.get('#login-portal').invoke('removeAttr', 'target').click()
+})
 
