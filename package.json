@@ -26,14 +26,6 @@
     "ts-loader": "^9.4.4"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
-    "html":{
-      "enabled":true,
-      "output":"cypress/reports/cucumber/cucumber-reports.html"
-    },
-    "messages":{
-      "enabled":true,
-      "output":"cypress/reports/cucumber-ndjson/cucumber-reports.ndjson"
-    }	       
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
   }
 }
