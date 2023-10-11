@@ -1,0 +1,7 @@
+{
+  "url": "http://www.webdriveruniversity.com",
+  "locators": {
+    "contactus": "#contact-us",
+    "loginPortal": "#login-portal"
+  }
+}

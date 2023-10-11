@@ -1,9 +1,11 @@
 import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
-
-const url = 'http://www.webdriveruniversity.com/';
+import Base_PO from "../page-objects/Base_PO";
+const basePage = new Base_PO();
+// const url = 'http://www.webdriveruniversity.com/';
 
 Given(`I visit to webdriveruniversity homepage`, () => {
-    cy.visit(url)
+    // cy.visit(url)
+    basePage.navigate("/");
 });
 
 When(`I click on contact us button`, () => {
@@ -11,6 +13,7 @@ When(`I click on contact us button`, () => {
 })
 
 When('I click on login button', () => {
-    cy.get('#login-portal').invoke('removeAttr', 'target').click()
+    // cy.get('#login-portal').invoke('removeAttr', 'target').click()
+    cy.clickOpenInSameTab('#login-portal');
 })
 
