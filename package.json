@@ -27,5 +27,8 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+  },
+  "dependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2"
   }
 }
